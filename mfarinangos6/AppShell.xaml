@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="mfarinangos6.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:mfarinangos6.Views"
+    Title="mfarinangos6">
+
+    <ShellContent
+        Title="Estudiantes"
+        ContentTemplate="{DataTemplate views:vEstudiante}"
+        Route="vEstudiante" />
+
+</Shell>

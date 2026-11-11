@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mfarinangos6.Views.vEstudiante">
+    <Grid Padding="16" RowDefinitions="Auto,Auto,*" RowSpacing="12">
+
+
+        <CollectionView Grid.Row="2"
+                        ItemsSource="{Binding Estudiantes}"
+                        EmptyView="No hay estudiantes para mostrar.">
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="70,*,*,70">
+                    <Label Text="Código" TextColor="White" FontAttributes="Bold" />
+                    <Label Grid.Column="1" Text="Nombre" TextColor="White" FontAttributes="Bold" />
+                    <Label Grid.Column="2" Text="Apellido" TextColor="White" FontAttributes="Bold" />
+                    <Label Grid.Column="3" Text="Edad" TextColor="White" FontAttributes="Bold" />
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="70,*,*,70"
+                          Padding="8"
+                          ColumnSpacing="4">
+                        <Label Text="{Binding Codigo}" />
+                        <Label Grid.Column="1" Text="{Binding Nombre}" />
+                        <Label Grid.Column="2" Text="{Binding Apellido}" />
+                        <Label Grid.Column="3" Text="{Binding Edad}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
