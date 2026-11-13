@@ -2,32 +2,48 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mfarinangos6.Views.vEstudiante">
-    <Grid Padding="16" RowDefinitions="Auto,Auto,*" RowSpacing="12">
+    <Grid Padding="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
+        <Label Grid.Row="0"
+               Text="Semana 6: Servicios web - Estudiante"
+               VerticalOptions="Center"
+               FontSize="20"
+               HorizontalOptions="Center" />
 
-
-        <CollectionView Grid.Row="2"
-                        ItemsSource="{Binding Estudiantes}"
-                        EmptyView="No hay estudiantes para mostrar.">
-            <CollectionView.Header>
-                <Grid ColumnDefinitions="70,*,*,70">
-                    <Label Text="Código" TextColor="White" FontAttributes="Bold" />
-                    <Label Grid.Column="1" Text="Nombre" TextColor="White" FontAttributes="Bold" />
-                    <Label Grid.Column="2" Text="Apellido" TextColor="White" FontAttributes="Bold" />
-                    <Label Grid.Column="3" Text="Edad" TextColor="White" FontAttributes="Bold" />
-                </Grid>
-            </CollectionView.Header>
-            <CollectionView.ItemTemplate>
+        <ListView x:Name="listaEstudiante"
+                  Grid.Row="1"
+                  ItemsSource="{Binding Estudiantes}"
+                  ItemSelected="listaEstudiante_ItemSelected">
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="70,*,*,70"
-                          Padding="8"
-                          ColumnSpacing="4">
-                        <Label Text="{Binding Codigo}" />
-                        <Label Grid.Column="1" Text="{Binding Nombre}" />
-                        <Label Grid.Column="2" Text="{Binding Apellido}" />
-                        <Label Grid.Column="3" Text="{Binding Edad}" />
-                    </Grid>
+                    <ViewCell>
+                        <StackLayout Spacing="20" Padding="20">
+                            <Grid RowSpacing="15" ColumnSpacing="15">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Codigo}" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="1" />
+                                <Label Text="{Binding Apellido}" Grid.Row="0" Grid.Column="2" />
+                                <Label Text="{Binding Edad}" Grid.Row="0" Grid.Column="3" />
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Grid.Row="2"
+                Text="Agregar"
+                HeightRequest="50"
+                BackgroundColor="#512BD4"
+                TextColor="White"
+                FontAttributes="Bold"
+                Clicked="btnAgregarEstudiante_Clicked" />
     </Grid>
 </ContentPage>

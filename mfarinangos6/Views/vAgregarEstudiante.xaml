@@ -1,0 +1,39 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mfarinangos6.Views.vAgregarEstudiante"
+             Title="vAgregarEstudiante">
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label Text="SEMNA 7: AGREGAR ESTUDIANTE"
+               VerticalOptions="Center"
+               FontSize="20"
+               HorizontalOptions="Center" />
+
+        <Entry x:Name="txtNombre"
+               Placeholder="Ingresa el nombre" />
+        <Entry x:Name="txtApellido"
+               Placeholder="Ingresa el apellido" />
+        <Entry x:Name="txtEdad"
+               Placeholder="Ingresa la edad" />
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnAgregar"
+                    Text="Agregar"
+                    Clicked="btnAgregar_Clicked"
+                    Grid.Row="0"
+                    Grid.Column="0" />
+
+            <Button x:Name="btnCancelar"
+         Text="Cancelar"
+         Clicked="btnCancelar_Clicked"
+         Grid.Row="0"
+         Grid.Column="1" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

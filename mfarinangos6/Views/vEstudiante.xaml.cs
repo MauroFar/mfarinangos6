@@ -8,7 +8,6 @@ public partial class vEstudiante : ContentPage
 {
     private const string Url = "http://192.168.18.29/ws_estudiante/post.php";
     private static readonly HttpClient Cliente = new();
-    private bool cargado;
 
     public ObservableCollection<Estudiante> Estudiantes { get; } = new();
 
@@ -22,16 +21,27 @@ public partial class vEstudiante : ContentPage
     {
         base.OnAppearing();
 
-        if (!cargado)
-        {
-            cargado = true;
-            await MostrarEstudiante();
-        }
+        await MostrarEstudiante();
     }
 
     private async void Actualizar_Clicked(object? sender, EventArgs e)
     {
         await MostrarEstudiante();
+    }
+
+    private async void btnAgregarEstudiante_Clicked(object? sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new vAgregarEstudiante());
+    }
+
+    private async void listaEstudiante_ItemSelected(object? sender, SelectedItemChangedEventArgs e)
+    {
+        if (e.SelectedItem is not Estudiante ObjetoEstudiante)
+        {
+            return;
+        }
+
+        await Navigation.PushAsync(new vActualizarEliminar(ObjetoEstudiante));
     }
 
     private async Task MostrarEstudiante()

@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace mfarinangos6
+﻿namespace mfarinangos6
 {
     public partial class App : Application
     {
@@ -11,7 +9,7 @@ namespace mfarinangos6
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            return new Window(new NavigationPage(new Views.vEstudiante()));
         }
     }
 }

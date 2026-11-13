@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mfarinangos6.Views.vActualizarEliminar"
+             Title="vActualizarEliminar">
+    <VerticalStackLayout>
+        <Label Text="ACTUALIZAR - ELIMINAR ESTUDIANTE"
+               VerticalOptions="Center"
+               FontSize="20"
+               HorizontalOptions="Center" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Text="CODIGO" />
+            <Entry x:Name="txtCodigo"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   IsEnabled="False" />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="NOMBRE" />
+            <Entry x:Name="txtNombre"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Placeholder="Modificar nombre" />
+
+            <Label Grid.Row="2" Grid.Column="0" Text="APELLIDO" />
+            <Entry x:Name="txtApellido"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Placeholder="Modificar apellido" />
+
+            <Label Grid.Row="3" Grid.Column="0" Text="EDAD" />
+            <Entry x:Name="txtEdad"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                                   Placeholder="Modificar edad"
+                                  Keyboard="Numeric" />
+                       </Grid>
+
+                           <Grid>
+                               <Grid.RowDefinitions>
+                                   <RowDefinition />
+                               </Grid.RowDefinitions>
+                               <Grid.ColumnDefinitions>
+                                   <ColumnDefinition />
+                                   <ColumnDefinition />
+                               </Grid.ColumnDefinitions>
+                               <Button x:Name="btnActualizar"
+                                       Text="Actualizar"
+                                       Clicked="btnActualizar_Clicked"
+                                       Grid.Row="0"
+                                       Grid.Column="0" />
+                               <Button x:Name="btnEliminar"
+                                       Text="Eliminar"
+                                       Clicked="btnEliminar_Clicked"
+                                       Grid.Row="0"
+                                       Grid.Column="1" />
+                           </Grid>
+                       </VerticalStackLayout>
+</ContentPage>
